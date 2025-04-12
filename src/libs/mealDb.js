@@ -7,7 +7,7 @@ export function parseMealDBRecipe (data) {
     const ingredient = data[`strIngredient${i}`];
     const measure = data[`strMeasure${i}`];
     if (ingredient) {
-      ingredients.push({item: ingredient, measure})
+      ingredients.push({item: ingredient, measure});
     }
   }
 
