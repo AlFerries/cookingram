@@ -1,4 +1,4 @@
-This is a portfolio project based on Nextjs - javscript with Supabase service.
+This is a portfolio project based on Nextjs - JavaScript with Supabase service.
 
 ## Getting Started
 
