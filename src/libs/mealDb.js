@@ -22,3 +22,14 @@ export function parseMealDBRecipe (data) {
     ingredients
   }
 }
+
+export function parseMealsList (data) {
+
+  const simplified = data.map(({idMeal, strMeal, strMealThumb}) => ({
+    id: idMeal, 
+    name: strMeal, 
+    image: strMealThumb, 
+  }));
+
+  return simplified;
+}

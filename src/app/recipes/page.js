@@ -1,4 +1,4 @@
-import { parseMealDBRecipe } from "@/libs/mealDb";
+import { parseMealsList } from "@/libs/mealDb";
 import Link from "next/link";
 
 // TODO: change URL to All recipes in .env
@@ -14,7 +14,7 @@ export default async function Home() {
     try {
       const res = await fetch(process.env.NEXT_PUBLIC_MDB_GET_RECIPES);
       const data = await res?.json();
-      return {recipes: data.meals.map(recipe => parseMealDBRecipe(recipe)), err: null};
+      return {recipes: parseMealsList(data.meals), err: null};
     } catch(error) {
       return {recipes: null, err: error};
     }
