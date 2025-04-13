@@ -1,12 +1,15 @@
-import { parseMealDBRecipe } from "@/libs/mealDb";
+import { parseMealDBRecipe, fetchMealBD } from "@/libs/mealDb";
 
-export default async function Home({params}) {
+// TODO: sanitize ID
+// TODO: notFound page if ID is incorrect or undefined
+// TODO: bautify page, convert into recipe page
+
+export default async function Home({ params }) {
 
   const { id } = await params;
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_MDB_GET_RECIPE_ID}${id}`); // TODO: check id, show notFound page if not exists
-  const data = await res.json();
-  const recipe = parseMealDBRecipe(data.meals[0]);
+  const { recipes : recipe, err } = await fetchMealBD(`${process.env.NEXT_PUBLIC_MDB_GET_RECIPE_ID}${id}`, parseMealDBRecipe);
+  if (err) return;
 
   return(
     <>
