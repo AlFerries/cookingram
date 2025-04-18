@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
       >
         <Container>
           <Header />
+          <hr className="border-stone-300"/>
           {children}
           {/* <Footer /> */}
         </Container>

@@ -1,6 +1,7 @@
 import { parseMealDBRecipe, fetchMealBD } from "@/libs/mealDb";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import NotFound from "@/app/not-found";
+
 
 // TODO: bautify page, convert into recipe page
 
@@ -8,7 +9,7 @@ export default async function Home({ params }) {
 
   const { id } = await params;
   const { recipes : recipe, err } = await fetchMealBD(`${process.env.NEXT_PUBLIC_MDB_GET_RECIPE_ID}${id}`, parseMealDBRecipe);
-  if (err) return notFound();
+  if (err) return <NotFound />;
 
   const { name, category, region, instructions, image, source, ingredients } = recipe
 
