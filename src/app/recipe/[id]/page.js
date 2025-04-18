@@ -3,8 +3,6 @@ import Image from "next/image";
 import NotFound from "@/app/not-found";
 
 
-// TODO: bautify page, convert into recipe page
-
 export default async function Home({ params }) {
 
   const { id } = await params;
@@ -17,8 +15,6 @@ export default async function Home({ params }) {
     <>
       <div className="grid grid-cols-2 items-start justify-between">
         <h1 className="font-extrabold text-3xl col-start-1 col-end-3 my-4 mx-8">{name}</h1>
-        {/* <p className="">{category}</p>
-        <p className="">{region}</p> */}
         <Image src={image} width={500} height={500} alt={name} className="col-start-1 col-end-2 m-4" />
         <table className="text-sm col-start-2 col-end-3 m-8 w-100">
           <thead>
