@@ -1,3 +1,4 @@
+import RecipeCard from "@/components/recipe_card";
 import { parseMealsList, fetchMealBD } from "@/libs/mealDb";
 import Link from "next/link";
 
@@ -14,11 +15,14 @@ export default async function Home() {
 
   return(
     <>
+    <div className="flex flex-wrap justify-between px-16 py-8 gap-8">
       {recipes.map(recipe => (
-        <div key={recipe.id}>
-          <Link href={`/recipe/${recipe.id}`}>{recipe.name}</Link>
-        </div>
+        // <div key={recipe.id}>
+        //   <Link href={`/recipe/${recipe.id}`}>{recipe.name}</Link>
+        // </div>
+        <RecipeCard key={recipe.id} recipe={recipe} />
       ))}
+    </div>
     </>
   )
 }
