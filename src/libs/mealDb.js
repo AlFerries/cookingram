@@ -40,6 +40,7 @@ export function parseMealsList (data) {
 // Fetch to ther MealDB
 export async function fetchMealBD (link, parser) {
   try {
+    // await new Promise((r) => setTimeout(r, 4000));
     const res = await fetch(link);
     if (!res.ok) return { recipes: null, err: res.status};
     const data = await res?.json();
