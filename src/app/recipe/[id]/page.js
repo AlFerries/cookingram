@@ -1,7 +1,6 @@
 import { parseMealDBRecipe, fetchMealBD } from "@/libs/mealDb";
 import { notFound } from "next/navigation";
 
-// TODO: notFound page if ID is incorrect or undefined
 // TODO: bautify page, convert into recipe page
 
 export default async function Home({ params }) {
