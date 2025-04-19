@@ -1,12 +1,18 @@
 // TODO:  Build main page
-//        - There shoud be recipes from every category
-//        - Ideally Hero with desciption what this site is about
+//        - Make a Hero with description what this site is about
 //        - Ideally "most favourited", when favourite functional will be made
+
+import Showcase from "@/components/showcase";
 
 export default function Home() {
   return (
     <main>
-      <h1>This is a main page</h1>
+      <Showcase type="dessert"/>
+      <Showcase type="breakfast"/>
+      <Showcase type="pasta"/>
+      <Showcase type="side"/>
+      <Showcase type="starter"/>
+      <Showcase type="seafood"/>
     </main>
   );
 }
