@@ -13,10 +13,10 @@ export default async function Home({ params }) {
 
   return(
     <>
-      <div className="grid grid-cols-2 items-start justify-between">
+      <div className="md:grid grid-cols-2 items-start justify-between">
         <h1 className="font-extrabold text-3xl col-start-1 col-end-3 my-4 mx-8">{name}</h1>
-        <Image src={image} width={500} height={500} alt={name} className="col-start-1 col-end-2 m-4" />
-        <table className="text-sm col-start-2 col-end-3 m-8 w-100">
+        <Image src={image} width={500} height={500} alt={name} className="col-start-1 col-end-2 md:m-4" />
+        <table className="text-sm col-start-2 col-end-3 mx-8 w-100">
           <thead>
             <tr className="text-left">
               <th className=" border-stone-200 border-dashed p-4">Ingredients</th>
