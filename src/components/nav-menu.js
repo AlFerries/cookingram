@@ -4,6 +4,9 @@ import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
+// TODO: show "login" only for unauthorized only, and show "logout" for authorized
+// TODO: do not show "login" on login page
+
 export default function NavMenu() {
 
   const [menuOpen, setMenuOpen] = useState(false)
